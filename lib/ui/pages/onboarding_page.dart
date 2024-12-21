@@ -1,5 +1,6 @@
 import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/pages/signin_page.dart';
+import 'package:bankga/ui/widgets/button.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -102,25 +103,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   currentIndex == 2
                       ? Column(
                           children: [
-                            Container(
-                              width: double.infinity,
-                              height: 50,
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                    backgroundColor: purpleColor,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                      56,
-                                    ))),
-                                child: Text(
-                                  'Get Started',
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semiBold,
-                                  ),
-                                ),
-                              ),
+                            CustomFilledButton(
+                              title: 'Get Started',
+                              onPressed: () {},
                             ),
                             Container(
                               width: 52,
@@ -167,34 +152,27 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                       : lightBackgroundColor,
                                 ),
                               ),
-                            Spacer(),
-                            Container(
-                              width: 150,
-                              height: 50,
-                              child: TextButton(
-                                onPressed: () {
-                                  if (currentIndex < 2) {
-                                    carouselController.nextPage(
-                                      duration:
-                                          const Duration(milliseconds: 300),
-                                      curve: Curves.easeInOut,
-                                    );
-                                  } else {
-                                    print("Get Started");
-                                  }
-                                },
-                                style: TextButton.styleFrom(
-                                    backgroundColor: purpleColor,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                      56,
-                                    ))),
-                                child: Text(
-                                  currentIndex < 2 ? 'Continue' : 'Get Started',
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semiBold,
-                                  ),
+                            Flexible(
+                              fit: FlexFit.loose,
+                              child: Align(
+                                alignment: Alignment
+                                    .centerRight, // Menyelaraskan ke kanan
+                                child: CustomFilledButton(
+                                  width: 150,
+                                  title: currentIndex < 2
+                                      ? 'Continue'
+                                      : 'Get Started',
+                                  onPressed: () {
+                                    if (currentIndex < 2) {
+                                      carouselController.nextPage(
+                                        duration:
+                                            const Duration(milliseconds: 300),
+                                        curve: Curves.easeInOut,
+                                      );
+                                    } else {
+                                      print("Navigasi ke halaman berikutnya");
+                                    }
+                                  },
                                 ),
                               ),
                             ),
