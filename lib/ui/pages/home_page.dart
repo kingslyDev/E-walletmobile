@@ -1,4 +1,5 @@
 import 'package:bankga/shared/themes.dart';
+import 'package:bankga/ui/widgets/home_services.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -83,6 +84,7 @@ class HomePage extends StatelessWidget {
           buildProfile(),
           buildWalletCard(),
           buildLevel(),
+          buildServices(),
         ],
       ),
     );
@@ -258,6 +260,50 @@ class HomePage extends StatelessWidget {
               valueColor: AlwaysStoppedAnimation(greenColor),
               backgroundColor: lightBackgroundColor,
             ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildServices() {
+    return Container(
+      margin: EdgeInsetsDirectional.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Do Something',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          SizedBox(
+            height: 14,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              HomeServicesItem(
+                imgUrl: 'assets/ic_topup.png',
+                title: 'Top Up',
+              ),
+              HomeServicesItem(
+                imgUrl: 'assets/ic_send.png',
+                title: 'Send',
+              ),
+              HomeServicesItem(
+                imgUrl: 'assets/ic_withdraw.png',
+                title: 'Withdraw',
+              ),
+              HomeServicesItem(
+                imgUrl: 'assets/ic_more.png',
+                title: 'More',
+              ),
+            ],
           ),
         ],
       ),
