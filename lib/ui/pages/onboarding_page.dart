@@ -1,4 +1,5 @@
 import 'package:bankga/shared/themes.dart';
+import 'package:bankga/ui/pages/signin_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -128,7 +129,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 top: 20,
                               ),
                               child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SigninPage(),
+                                    ),
+                                  );
+                                },
                                 style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
