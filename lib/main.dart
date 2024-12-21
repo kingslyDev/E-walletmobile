@@ -1,4 +1,5 @@
 import 'package:bankga/ui/pages/onboarding_page.dart';
+import 'package:bankga/ui/pages/register/register_set_identity.dart';
 import 'package:bankga/ui/pages/register/register_set_profile.dart';
 import 'package:bankga/ui/pages/register_page.dart';
 import 'package:bankga/ui/pages/signin_page.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/signin': (context) => const SigninPage(),
         '/register': (context) => const RegisterPage(),
         '/registerpic': (context) => const RegisterSetProfile(),
+        '/registeridentitiy': (context) => const RegisterSetIdentity(),
       },
     );
   }
