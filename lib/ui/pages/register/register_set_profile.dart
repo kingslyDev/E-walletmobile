@@ -3,8 +3,8 @@ import 'package:bankga/ui/widgets/button.dart';
 import 'package:bankga/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+class RegisterSetProfile extends StatelessWidget {
+  const RegisterSetProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,47 +41,63 @@ class RegisterPage extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(22),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(22),
               color: whiteColor,
+              borderRadius: BorderRadius.circular(22),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomFieldText(
-                  label: 'Full Name',
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: lightBackgroundColor,
+                //   ),
+                //   child: Center(
+                //     child: Image.asset(
+                //       'assets/ic_upload.png',
+                //       width: 32,
+                //       height: 32,
+                //     ),
+                //   ),
+                // ),
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/img_profile.png'),
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 16,
                 ),
-                CustomFieldText(
-                  label: 'Email Address',
+                Text(
+                  'Ghaly Abrarian',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
+                  ),
                 ),
                 SizedBox(
-                  height: 16,
+                  height: 30,
                 ),
                 CustomFieldText(
-                  label: 'Password',
-                  obsecure: true,
+                  label: 'Set PIN (6 digit number)',
                 ),
                 SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(
                   title: 'Continue',
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/registerpic');
-                  },
-                )
+                  onPressed: () {},
+                ),
               ],
             ),
-          ),
-          SizedBox(
-            height: 24,
-          ),
-          CustomTextWidget(
-            title: 'Sign In',
-            onPressed: () {
-              Navigator.pushNamed(context, '/signin');
-            },
           ),
         ],
       ),
