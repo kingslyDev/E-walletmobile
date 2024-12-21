@@ -78,7 +78,12 @@ class SigninPage extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          CustomTextWidget(title: 'Create A New Account'),
+          CustomTextWidget(
+            title: 'Create A New Account',
+            onPressed: () {
+              Navigator.pushNamed(context, '/register');
+            },
+          ),
         ],
       ),
     );

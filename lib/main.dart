@@ -1,3 +1,6 @@
+import 'package:bankga/ui/pages/onboarding_page.dart';
+import 'package:bankga/ui/pages/register_page.dart';
+import 'package:bankga/ui/pages/signin_page.dart';
 import 'package:bankga/ui/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -8,9 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+      routes: {
+        '/': (context) => const SplashPage(),
+        '/onboarding': (context) => const OnboardingPage(),
+        '/signin': (context) => const SigninPage(),
+        '/register': (context) => const RegisterPage(),
+      },
     );
   }
 }

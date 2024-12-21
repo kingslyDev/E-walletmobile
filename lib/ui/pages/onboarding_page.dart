@@ -110,12 +110,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             CustomTextWidget(
                               title: 'Login',
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => SigninPage(),
-                                  ),
-                                );
+                                Navigator.pushNamed(context, '/signin');
                               },
                             ),
                           ],
