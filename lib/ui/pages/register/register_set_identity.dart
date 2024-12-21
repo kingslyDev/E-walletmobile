@@ -77,7 +77,12 @@ class RegisterSetIdentity extends StatelessWidget {
                 ),
                 CustomFilledButton(
                   title: 'Continue',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/registeracc',
+                    );
+                  },
                 ),
               ],
             ),
@@ -85,7 +90,10 @@ class RegisterSetIdentity extends StatelessWidget {
           SizedBox(
             height: 60,
           ),
-          CustomTextWidget(title: 'Skip For Now'),
+          CustomTextWidget(
+            title: 'Skip For Now',
+            onPressed: () {},
+          ),
         ],
       ),
     );

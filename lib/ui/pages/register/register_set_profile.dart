@@ -88,6 +88,7 @@ class RegisterSetProfile extends StatelessWidget {
                 ),
                 CustomFieldText(
                   label: 'Set PIN (6 digit number)',
+                  obsecure: true,
                 ),
                 SizedBox(
                   height: 30,
