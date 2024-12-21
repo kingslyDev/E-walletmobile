@@ -1,6 +1,7 @@
 import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/widgets/home_latest_transaction.dart';
 import 'package:bankga/ui/widgets/home_services.dart';
+import 'package:bankga/ui/widgets/home_user_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -87,6 +88,7 @@ class HomePage extends StatelessWidget {
           buildLevel(),
           buildServices(),
           buildLastestTransaction(),
+          buildSendAgain(),
         ],
       ),
     );
@@ -371,6 +373,40 @@ class HomePage extends StatelessWidget {
                   time: 'Feb 18',
                   value: '+Rp450.000',
                 ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildSendAgain() {
+    return Container(
+      margin: EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Send Again',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          SizedBox(
+            height: 14,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: const [
+                HomeUserItem(imgUrl: 'assets/img_per1.png', name: 'bejo'),
+                HomeUserItem(imgUrl: 'assets/img_per2.png', name: 'dadang'),
+                HomeUserItem(imgUrl: 'assets/img_per3.png', name: 'joni'),
+                HomeUserItem(imgUrl: 'assets/img_per4.png', name: 'santoso'),
               ],
             ),
           ),
