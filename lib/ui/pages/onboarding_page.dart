@@ -107,32 +107,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               title: 'Get Started',
                               onPressed: () {},
                             ),
-                            Container(
-                              width: 52,
-                              height: 24,
-                              margin: EdgeInsets.only(
-                                top: 20,
-                              ),
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => SigninPage(),
-                                    ),
-                                  );
-                                },
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  'Login',
-                                  style: greyTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: regular,
+                            CustomTextWidget(
+                              title: 'Login',
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SigninPage(),
                                   ),
-                                ),
-                              ),
+                                );
+                              },
                             ),
                           ],
                         )

@@ -39,3 +39,37 @@ class CustomFilledButton extends StatelessWidget {
     );
   }
 }
+
+class CustomTextWidget extends StatelessWidget {
+  final String title;
+  final VoidCallback? onPressed;
+  const CustomTextWidget({
+    super.key,
+    required this.title,
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 52,
+      height: 24,
+      margin: EdgeInsets.only(
+        top: 20,
+      ),
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+        ),
+        child: Text(
+          title,
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: regular,
+          ),
+        ),
+      ),
+    );
+  }
+}
