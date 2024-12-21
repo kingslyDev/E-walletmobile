@@ -1,4 +1,5 @@
 import 'package:bankga/shared/themes.dart';
+import 'package:bankga/ui/widgets/home_latest_transaction.dart';
 import 'package:bankga/ui/widgets/home_services.dart';
 import 'package:flutter/material.dart';
 
@@ -85,6 +86,7 @@ class HomePage extends StatelessWidget {
           buildWalletCard(),
           buildLevel(),
           buildServices(),
+          buildLastestTransaction(),
         ],
       ),
     );
@@ -304,6 +306,73 @@ class HomePage extends StatelessWidget {
                 title: 'More',
               ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildLastestTransaction() {
+    return Container(
+      margin: EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Latest Transactions',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          Container(
+            padding: const EdgeInsets.all(22),
+            margin: EdgeInsets.only(
+              top: 14,
+            ),
+            decoration: BoxDecoration(
+              color: whiteColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              children: [
+                HomeLatestTransaction(
+                  imgUrl: 'assets/ic_transaction_cat1.png',
+                  title: 'Top Up',
+                  time: 'Yesterday',
+                  value: '+Rp250.000',
+                ),
+                HomeLatestTransaction(
+                  imgUrl: 'assets/ic_transaction_cat2.png',
+                  title: 'Cashback',
+                  time: 'Yesterday',
+                  value: '+Rp150.000',
+                ),
+                HomeLatestTransaction(
+                  imgUrl: 'assets/ic_transaction_cat3.png',
+                  title: 'Withdraw',
+                  time: 'Sep 2',
+                  value: '+Rp4.290.000',
+                ),
+                HomeLatestTransaction(
+                  imgUrl: 'assets/ic_transaction_cat4.png',
+                  title: 'Transfer',
+                  time: 'Aug 27',
+                  value: '+Rp450.000',
+                ),
+                HomeLatestTransaction(
+                  imgUrl: 'assets/ic_transaction_cat5.png',
+                  title: 'Electric',
+                  time: 'Feb 18',
+                  value: '+Rp450.000',
+                ),
+              ],
+            ),
           ),
         ],
       ),
