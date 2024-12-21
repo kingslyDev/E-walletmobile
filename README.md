@@ -1,16 +1,19 @@
 # bankga
 
-A new Flutter project.
+Create a E-wallet mobile application using Flutter use for IOS/Android
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+![App Screenshot](homeinterface.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+GUIDE FOR CLONE,
+1. GIT CLONE ON THIS PROJECT LINK
+2. GO TO DIRECTORY WHERE THIS PROJECT HAS CLONE
+3. RUN ON TERMINAL "PUB GET" TO INSTALL PUBSPEC.YAML
+4. RUN ON TERMINAL "FLUTTER RUN"
+5. BEFORE DIRECTION POINT NUMBER 4 MAKE SURE YOU WAS RUN YOUR SIMULATOR :)
+
+enjoy guys, keep spirit and happy learninggggg :)
