@@ -1,5 +1,7 @@
+import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/pages/home_page.dart';
 import 'package:bankga/ui/pages/onboarding_page.dart';
+import 'package:bankga/ui/pages/pin_page.dart';
 import 'package:bankga/ui/pages/profile/profile_page.dart';
 import 'package:bankga/ui/pages/register/register_set_identity.dart';
 import 'package:bankga/ui/pages/register/register_set_profile.dart';
@@ -18,6 +20,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: lightBackgroundColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: lightBackgroundColor,
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: blackTextStyle.copyWith(
+            fontSize: 20,
+            fontWeight: semiBold,
+          ),
+        ),
+      ),
       routes: {
         '/': (context) => const SplashPage(),
         '/onboarding': (context) => const OnboardingPage(),
@@ -28,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/registeracc': (context) => const RegisterSuccess(),
         '/home': (context) => const HomePage(),
         '/profile': (context) => const ProfilePage(),
+        '/pin': (context) => const PinPage(),
       },
     );
   }
