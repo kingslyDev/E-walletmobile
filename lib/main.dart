@@ -2,6 +2,7 @@ import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/pages/home_page.dart';
 import 'package:bankga/ui/pages/onboarding_page.dart';
 import 'package:bankga/ui/pages/pin_page.dart';
+import 'package:bankga/ui/pages/profile/edit_profile_page.dart';
 import 'package:bankga/ui/pages/profile/profile_page.dart';
 import 'package:bankga/ui/pages/register/register_set_identity.dart';
 import 'package:bankga/ui/pages/register/register_set_profile.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/registeracc': (context) => const RegisterSuccess(),
         '/home': (context) => const HomePage(),
         '/profile': (context) => const ProfilePage(),
+        '/editprofile': (context) => const EditProfilePage(),
         '/pin': (context) => const PinPage(),
       },
     );
