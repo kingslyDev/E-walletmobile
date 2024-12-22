@@ -443,26 +443,22 @@ class HomePage extends StatelessWidget {
               HomeTipsItem(
                 imgUrl: 'assets/img_tips1.png',
                 title: 'Best tips for using\na credit card',
-                url:
-                    'https://buildwithangga.com/kelas/full-stack-laravel-flutter-build-e-wallet-mobile-apps',
+                url: 'https://nusajar.id',
               ),
               HomeTipsItem(
                 imgUrl: 'assets/img_tips2.png',
                 title: 'Best tips for using\na credit card',
-                url:
-                    'https://buildwithangga.com/kelas/full-stack-laravel-flutter-build-e-wallet-mobile-apps',
+                url: 'https://nusajar.id',
               ),
               HomeTipsItem(
                 imgUrl: 'assets/img_tips3.png',
                 title: 'Best tips for using\na credit card',
-                url:
-                    'https://buildwithangga.com/kelas/full-stack-laravel-flutter-build-e-wallet-mobile-apps',
+                url: 'https://nusajar.id',
               ),
               HomeTipsItem(
                 imgUrl: 'assets/img_tips4.png',
                 title: 'Best tips for using\na credit card',
-                url:
-                    'https://buildwithangga.com/kelas/full-stack-laravel-flutter-build-e-wallet-mobile-apps',
+                url: 'https://nusajar.id',
               ),
             ],
           ),
