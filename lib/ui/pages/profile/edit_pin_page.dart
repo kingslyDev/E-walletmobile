@@ -3,14 +3,16 @@ import 'package:bankga/ui/widgets/button.dart';
 import 'package:bankga/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class EditProfilePage extends StatelessWidget {
-  const EditProfilePage({super.key});
+class EditPinPage extends StatelessWidget {
+  const EditPinPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Profile'),
+        title: Text(
+          'Edit Pin',
+        ),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(
@@ -22,37 +24,35 @@ class EditProfilePage extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              horizontal: 30,
-              vertical: 22,
+              horizontal: 24,
+              vertical: 30,
             ),
             decoration: BoxDecoration(
               color: whiteColor,
-              borderRadius: BorderRadius.circular(22),
+              borderRadius: BorderRadius.circular(
+                24,
+              ),
             ),
             child: Center(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 16,
                 children: [
-                  CustomFieldText(label: 'Username'),
-                  CustomFieldText(label: 'Full Name'),
-                  CustomFieldText(label: 'Email Address'),
-                  CustomFieldText(
-                    label: 'Password',
-                    obsecure: true,
-                  ),
+                  CustomFieldText(label: 'Old Pin'),
+                  CustomFieldText(label: 'New Pin'),
                   SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                   CustomFilledButton(
-                    title: 'Update Now',
+                    title: 'Edit Pin',
                     onPressed: () {
-                      Navigator.pushNamed(context, '/editpin');
+                      Navigator.pushNamed(context, '/editacc');
                     },
-                  ),
+                  )
                 ],
               ),
             ),
-          ),
+          )
         ],
       ),
     );
