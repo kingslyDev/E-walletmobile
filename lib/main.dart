@@ -12,6 +12,7 @@ import 'package:bankga/ui/pages/register/register_success.dart';
 import 'package:bankga/ui/pages/register_page.dart';
 import 'package:bankga/ui/pages/signin_page.dart';
 import 'package:bankga/ui/pages/splash_screen.dart';
+import 'package:bankga/ui/pages/topup/topup_amount_page.dart';
 import 'package:bankga/ui/pages/topup/topup_page.dart';
 import 'package:flutter/material.dart';
 
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         '/editpin': (context) => EditPinPage(),
         '/editacc': (context) => EditSuccessPage(),
         '/topup': (context) => TopupPage(),
+        '/topupamount': (context) => TopupAmountPage(),
       },
     );
   }
