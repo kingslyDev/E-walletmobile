@@ -1,7 +1,6 @@
 import 'package:bankga/shared/themes.dart';
-import 'package:bankga/ui/pages/profile/profile_page.dart';
+import 'package:bankga/ui/pages/home_page.dart';
 import 'package:bankga/ui/widgets/button.dart';
-import 'package:bankga/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class EditSuccessPage extends StatelessWidget {
@@ -41,7 +40,7 @@ class EditSuccessPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const ProfilePage()),
+                  MaterialPageRoute(builder: (context) => const HomePage()),
                   (route) => false,
                 );
               },
