@@ -316,7 +316,10 @@ class HomePage extends StatelessWidget {
                 imgUrl: 'assets/ic_more.png',
                 title: 'More',
                 onTap: () {
-                  showDialog(context: context, builder: (context) =>)
+                  showDialog(
+                    context: context,
+                    builder: (context) => const MoreDialog(),
+                  );
                 },
               ),
             ],
@@ -483,6 +486,66 @@ class MoreDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return AlertDialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: EdgeInsets.zero,
+      alignment: Alignment.bottomCenter,
+      content: Container(
+        padding: const EdgeInsets.all(30),
+        width: MediaQuery.of(context).size.width,
+        height: 326,
+        decoration: BoxDecoration(
+          color: lightBackgroundColor,
+          borderRadius: BorderRadius.circular(
+            22,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Do More With Us',
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: semiBold,
+              ),
+            ),
+            SizedBox(
+              height: 13,
+            ),
+            Wrap(
+              spacing: 30,
+              runSpacing: 20,
+              children: [
+                HomeServicesItem(
+                  imgUrl: 'assets/ic_data.png',
+                  title: 'Data',
+                ),
+                HomeServicesItem(
+                  imgUrl: 'assets/ic_water.png',
+                  title: 'Water',
+                ),
+                HomeServicesItem(
+                  imgUrl: 'assets/ic_stream.png',
+                  title: 'Stream',
+                ),
+                HomeServicesItem(
+                  imgUrl: 'assets/ic_movie.png',
+                  title: 'Movie',
+                ),
+                HomeServicesItem(
+                  imgUrl: 'assets/ic_food.png',
+                  title: 'Food',
+                ),
+                HomeServicesItem(
+                  imgUrl: 'assets/ic_travel.png',
+                  title: 'Travel',
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
