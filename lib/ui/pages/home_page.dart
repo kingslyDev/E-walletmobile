@@ -315,6 +315,9 @@ class HomePage extends StatelessWidget {
               HomeServicesItem(
                 imgUrl: 'assets/ic_more.png',
                 title: 'More',
+                onTap: () {
+                  showDialog(context: context, builder: (context) =>)
+                },
               ),
             ],
           ),
@@ -472,5 +475,14 @@ class HomePage extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class MoreDialog extends StatelessWidget {
+  const MoreDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
