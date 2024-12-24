@@ -1,6 +1,9 @@
 import 'package:bankga/shared/themes.dart';
+import 'package:bankga/ui/pages/topup/topup_success_page.dart';
 import 'package:bankga/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TopupAmountPage extends StatefulWidget {
   const TopupAmountPage({super.key});
@@ -12,6 +15,23 @@ class TopupAmountPage extends StatefulWidget {
 class _TopupAmountPageState extends State<TopupAmountPage> {
   final TextEditingController amountController =
       TextEditingController(text: '0');
+
+  @override
+  void initState() {
+    super.initState();
+
+    amountController.addListener(() {
+      final text = amountController.text;
+
+      amountController.value = amountController.value.copyWith(
+        text: NumberFormat.currency(
+          locale: 'id',
+          decimalDigits: 0,
+          symbol: '',
+        ).format(int.parse(text.replaceAll('.', ''))),
+      );
+    });
+  }
 
   addAmount(String number) {
     if (amountController.text == '0' && number == '0') {
@@ -192,8 +212,17 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
           ),
           CustomFilledButton(
             title: 'Topup Now',
-            onPressed: () {
-              Navigator.pushNamed(context, '/topupacc');
+            onPressed: () async {
+              if (await Navigator.pushNamed(context, '/pin') == true) {
+                await launchUrl(Uri.parse('https://demo.midtrans.com/'));
+
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const TopupSuccessPage()),
+                  (route) => false,
+                );
+              }
             },
           ),
           const SizedBox(

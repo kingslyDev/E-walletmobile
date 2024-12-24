@@ -93,7 +93,9 @@ class PackageDataPage extends StatelessWidget {
           ),
           CustomFilledButton(
             title: 'Continue',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/packagenominal');
+            },
           ),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/pages/home_page.dart';
 import 'package:bankga/ui/pages/onboarding_page.dart';
 import 'package:bankga/ui/pages/packagedata/package_data_page.dart';
+import 'package:bankga/ui/pages/packagedata/package_nominal_page.dart';
 import 'package:bankga/ui/pages/pin_page.dart';
 import 'package:bankga/ui/pages/profile/edit_pin_page.dart';
 import 'package:bankga/ui/pages/profile/edit_profile_page.dart';
@@ -16,6 +17,7 @@ import 'package:bankga/ui/pages/splash_screen.dart';
 import 'package:bankga/ui/pages/topup/topup_amount_page.dart';
 import 'package:bankga/ui/pages/topup/topup_page.dart';
 import 'package:bankga/ui/pages/topup/topup_success_page.dart';
+import 'package:bankga/ui/pages/transfer/transfer_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -57,6 +59,8 @@ class MyApp extends StatelessWidget {
         '/topupamount': (context) => TopupAmountPage(),
         '/topupacc': (context) => TopupSuccessPage(),
         '/packagedata': (context) => PackageDataPage(),
+        '/packagenominal': (context) => PackageNominalPage(),
+        '/transfer': (context) => TransferPage(),
       },
     );
   }
