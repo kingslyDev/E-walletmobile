@@ -1,6 +1,7 @@
 import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/pages/home_page.dart';
 import 'package:bankga/ui/pages/onboarding_page.dart';
+import 'package:bankga/ui/pages/packagedata/package_data_page.dart';
 import 'package:bankga/ui/pages/pin_page.dart';
 import 'package:bankga/ui/pages/profile/edit_pin_page.dart';
 import 'package:bankga/ui/pages/profile/edit_profile_page.dart';
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
         '/topup': (context) => TopupPage(),
         '/topupamount': (context) => TopupAmountPage(),
         '/topupacc': (context) => TopupSuccessPage(),
+        '/packagedata': (context) => PackageDataPage(),
       },
     );
   }
