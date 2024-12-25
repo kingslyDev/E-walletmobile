@@ -1,10 +1,29 @@
+import 'package:bankga/shared/shared_methods.dart';
 import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/widgets/button.dart';
 import 'package:bankga/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final nameController = TextEditingController(text: '');
+  final emailController = TextEditingController(text: '');
+  final passwordController = TextEditingController(text: '');
+
+  bool validate() {
+    if (nameController.text.isEmpty ||
+        emailController.text.isEmpty ||
+        passwordController.text.isEmpty) {
+      return false;
+    }
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +66,14 @@ class RegisterPage extends StatelessWidget {
               children: [
                 CustomFieldText(
                   label: 'Full Name',
+                  controller: nameController,
                 ),
                 SizedBox(
                   height: 16,
                 ),
                 CustomFieldText(
                   label: 'Email Address',
+                  controller: emailController,
                 ),
                 SizedBox(
                   height: 16,
@@ -60,6 +81,7 @@ class RegisterPage extends StatelessWidget {
                 CustomFieldText(
                   label: 'Password',
                   obsecure: true,
+                  controller: passwordController,
                 ),
                 SizedBox(
                   height: 30,
@@ -67,7 +89,11 @@ class RegisterPage extends StatelessWidget {
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(context, '/registerpic');
+                    if (validate()) {
+                      Navigator.pushNamed(context, '/registerpic');
+                    } else {
+                      showCustomSnackbar(context, 'Ada yang perlu kamu Isi!');
+                    }
                   },
                 )
               ],

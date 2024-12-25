@@ -1,3 +1,4 @@
+import 'package:bankga/shared/shared_methods.dart';
 import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/widgets/home_latest_transaction.dart';
 import 'package:bankga/ui/widgets/home_services.dart';
@@ -210,7 +211,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Text(
-            'Rp478.920.023',
+            formatCurrency(12500),
             style: whiteTextStyle.copyWith(
               fontSize: 18,
               fontWeight: semiBold,
@@ -251,7 +252,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Text(
-                'Of Rp20.000',
+                'Of ${formatCurrency(2000000)}',
                 style: blackTextStyle.copyWith(
                   fontSize: 14,
                   fontWeight: semiBold,
@@ -365,31 +366,31 @@ class HomePage extends StatelessWidget {
                   imgUrl: 'assets/ic_transaction_cat1.png',
                   title: 'Top Up',
                   time: 'Yesterday',
-                  value: '+Rp250.000',
+                  value: '+${formatCurrency(25000000, symbol: '')}',
                 ),
                 HomeLatestTransaction(
                   imgUrl: 'assets/ic_transaction_cat2.png',
                   title: 'Cashback',
                   time: 'Yesterday',
-                  value: '+Rp150.000',
+                  value: '+${formatCurrency(25000000, symbol: '')}',
                 ),
                 HomeLatestTransaction(
                   imgUrl: 'assets/ic_transaction_cat3.png',
                   title: 'Withdraw',
                   time: 'Sep 2',
-                  value: '+Rp4.290.000',
+                  value: '+${formatCurrency(25000000, symbol: '')}',
                 ),
                 HomeLatestTransaction(
                   imgUrl: 'assets/ic_transaction_cat4.png',
                   title: 'Transfer',
                   time: 'Aug 27',
-                  value: '+Rp450.000',
+                  value: '+${formatCurrency(25000000, symbol: '')}',
                 ),
                 HomeLatestTransaction(
                   imgUrl: 'assets/ic_transaction_cat5.png',
                   title: 'Electric',
                   time: 'Feb 18',
-                  value: '+Rp450.000',
+                  value: '+${formatCurrency(25000000, symbol: '')}',
                 ),
               ],
             ),

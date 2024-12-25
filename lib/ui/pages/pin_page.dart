@@ -1,3 +1,4 @@
+import 'package:bankga/shared/shared_methods.dart';
 import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +19,13 @@ class _PinPageState extends State<PinPage> {
         pinController.text = pinController.text + number;
       });
     }
-    if (pinController.text == '123123') {
-      Navigator.pop(context, true);
+
+    if (pinController.text.length == 6) {
+      if (pinController.text == '123123') {
+        Navigator.pop(context, true);
+      } else {
+        showCustomSnackbar(context, 'Pin Yang anda masukan Salah!');
+      }
     }
   }
 

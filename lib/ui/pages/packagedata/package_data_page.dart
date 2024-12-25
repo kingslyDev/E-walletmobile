@@ -1,3 +1,4 @@
+import 'package:bankga/shared/shared_methods.dart';
 import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/widgets/button.dart';
 import 'package:bankga/ui/widgets/provider_item.dart';
@@ -54,7 +55,7 @@ class PackageDataPage extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    'Balance Rp478.920.023',
+                    'Balance ${formatCurrency(120000)}',
                     style: greyTextStyle.copyWith(
                       fontSize: 12,
                     ),

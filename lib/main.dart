@@ -18,6 +18,8 @@ import 'package:bankga/ui/pages/topup/topup_amount_page.dart';
 import 'package:bankga/ui/pages/topup/topup_page.dart';
 import 'package:bankga/ui/pages/topup/topup_success_page.dart';
 import 'package:bankga/ui/pages/transfer/transfer_page.dart';
+import 'package:bankga/ui/pages/transfer/transfer_success_page.dart';
+import 'package:bankga/ui/pages/transfer/transfer_amount_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -61,6 +63,8 @@ class MyApp extends StatelessWidget {
         '/packagedata': (context) => PackageDataPage(),
         '/packagenominal': (context) => PackageNominalPage(),
         '/transfer': (context) => TransferPage(),
+        '/transferamount': (context) => TransferAmountPage(),
+        '/transferacc': (context) => TransferSuccessPage(),
       },
     );
   }
