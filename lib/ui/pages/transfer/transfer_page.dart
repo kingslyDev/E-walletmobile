@@ -1,4 +1,5 @@
 import 'package:bankga/shared/themes.dart';
+import 'package:bankga/ui/widgets/button.dart';
 import 'package:bankga/ui/widgets/forms.dart';
 import 'package:bankga/ui/widgets/transfer_result_user_item.dart';
 import 'package:bankga/ui/widgets/transfer_user_recent_item.dart';
@@ -35,6 +36,16 @@ class TransferPage extends StatelessWidget {
           ),
           // buildRecentUsers(),
           buildResult(),
+          SizedBox(
+            height: 250,
+          ),
+          CustomFilledButton(
+            title: 'Continue',
+            onPressed: () {},
+          ),
+          SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );
