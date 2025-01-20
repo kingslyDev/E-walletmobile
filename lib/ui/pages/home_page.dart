@@ -460,7 +460,7 @@ class HomePage extends StatelessWidget {
               HomeTipsItem(
                 imgUrl: 'assets/img_tips1.png',
                 title: 'Best tips for using\na credit card',
-                url: 'https://nusajar.id',
+                url: 'https://demo.midtrans.com/',
               ),
               HomeTipsItem(
                 imgUrl: 'assets/img_tips2.png',
