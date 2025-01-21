@@ -1,22 +1,35 @@
 import 'dart:convert';
-
 import 'package:bankga/shared/shared_values.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
   Future<bool> checkEmail(String email) async {
     try {
-      final res = await http.post(Uri.parse('$baseUrl//check-email'), body: {
-        'email': email,
-      });
+      final response = await http.post(
+        Uri.parse('$baseUrl/check-email'),
+        headers: {
+          'Content-Type': 'application/json', // Tambahkan header ini
+        },
+        body: jsonEncode({
+          'email': email, // Formatkan body sebagai JSON
+        }),
+      );
 
-      if (res.statusCode == 200) {
-        return jsonDecode(res.body)['email_exists'];
+      if (response.statusCode == 200) {
+        final responseData = jsonDecode(response.body);
+        if (responseData.containsKey('email_exists')) {
+          return !(responseData['email_exists'] as bool);
+        } else {
+          throw Exception(
+              'Invalid response format: missing "email_exists" key');
+        }
       } else {
-        return jsonDecode(res.body)['error'];
+        print('Response body: ${response.body}');
+        throw Exception('Failed to check email: ${response.statusCode}');
       }
     } catch (e) {
-      rethrow;
+      print('Error in checkEmail: $e');
+      return false;
     }
   }
 }

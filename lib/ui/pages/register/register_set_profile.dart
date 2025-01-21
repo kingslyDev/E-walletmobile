@@ -1,10 +1,16 @@
+import 'package:bankga/models/signup_form_model.dart';
 import 'package:bankga/shared/themes.dart';
 import 'package:bankga/ui/widgets/button.dart';
 import 'package:bankga/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class RegisterSetProfile extends StatelessWidget {
-  const RegisterSetProfile({super.key});
+  final SignupFormModel data;
+
+  const RegisterSetProfile({
+    super.key,
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
